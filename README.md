@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Sentiment Analysis Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Overview
 
-## Available Scripts
+This is the **frontend** for the Sentiment Analysis application. It provides an easy-to-use interface to analyze movie reviews and view stored sentiments. The backend utilizes a **fine-tuned LLM model** for sentiment classification, deployed on Cohere in the backend.
 
-In the project directory, you can run:
+The frontend is built with **React.js** and is fully **Dockerized** for production deployment.
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Analyze Page**: Add multiple reviews (up to 10 at a time) and analyze their sentiment.
+- **Search Page**: View all stored reviews, including sentiment and score.
+- **Text Search**: Search reviews using a text-based search on review content.
+- **Pagination**: Navigate through stored reviews efficiently.
+- **Fully Dockerized**: Can be deployed using Docker or Docker Compose.
+- **Deployed on Vercel**: Live at:  
+  👉 [Sentiment Analysis Frontend](https://sentiment-analysis-frontend-psi.vercel.app/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏗️ Tech Stack
+- **Frontend**: React.js, Bootstrap (for styling)
+- **Backend**: FastAPI, PostgreSQL, Cohere API (for sentiment analysis)
+- **Deployment**: Vercel (frontend), Render (backend), Docker (for containerization)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🌐 Backend Details
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This frontend interacts with a **FastAPI backend**, which is deployed at:  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👉 **Backend API Docs**: [`<backend_url>/docs`](https://sentiment-analysis-backend-nu7h.onrender.com/docs)  
 
-### `npm run eject`
+The backend utilizes a **fine-tuned Cohere model** trained on IMDb reviews for sentiment classification.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Local Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **1️⃣ Clone the Repository**
+```sh
+git clone <https://github.com/manas-sde/sentiment-analysis-frontend.git>
+cd sentiment-analysis-frontend
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **2️⃣ Create a `.env` File**
+In the root folder, create a `.env` file and add the backend URL:
+```
+REACT_APP_BACKEND_URL=http://localhost:8000  # Or use the production backend URL
+```
 
-## Learn More
+### **3️⃣ Run with Docker**
+Build and run the frontend using Docker:
+```sh
+docker-compose up --build -d
+```
+The app will now be accessible at **http://localhost:3000**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **4️⃣ Run in Development Mode**
+For development without Docker, use:
+```sh
+npm install
+npm start
+```
+This will start the React app on **http://localhost:3000**.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📸 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **Analyze Page**
+_Add and analyze multiple reviews at once._
+![alt text](image.png)
+![alt text](image-1.png)
 
-### Analyzing the Bundle Size
+### **Search Page**
+_View past reviews, search by text, and filter results._
+![alt text](image-2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🔧 Areas for Improvement
+- **Response Time**: Backend response time is slow for initial calls, as it is deployed on free server, so servers gets spin down due to prolonged inactivity.
+- **Better UI/UX**: Can be more visually appealing and user-friendly.
+- **Sorting Option**: Allow sorting reviews by sentiment score.
+- **Performance Optimization**: Improve API request handling and response time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-------------------------------------------------------------------------
