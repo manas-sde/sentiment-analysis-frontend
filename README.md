@@ -1,5 +1,13 @@
 # Sentiment Analysis Frontend
 
+
+## 🌐 Live URL
+
+The frontend is deployed and accessible at:
+
+[Sentiment Analysis App](https://sentiment-analysis-frontend-psi.vercel.app/)
+
+
 ## 📌 Overview
 
 This is the **frontend** for the Sentiment Analysis application. It provides an easy-to-use interface to analyze movie reviews and view stored sentiments. The backend utilizes a **fine-tuned LLM model** for sentiment classification, deployed on Cohere in the backend.
@@ -30,7 +38,7 @@ The frontend is built with **React.js** and is fully **Dockerized** for producti
 
 This frontend interacts with a **FastAPI backend**, which is deployed at:  
 
-👉 **Backend API Docs**: [`<backend_url>/docs`](https://sentiment-analysis-backend-nu7h.onrender.com/docs)  
+👉 **Backend API Docs**: [`Sentiment analysis backend`](https://sentiment-analysis-backend-nu7h.onrender.com/docs)  
 
 The backend utilizes a **fine-tuned Cohere model** trained on IMDb reviews for sentiment classification.
 
